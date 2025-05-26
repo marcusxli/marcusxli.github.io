@@ -1,27 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcus</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- navigation -->
     <nav class="navigation" id="navigation">
-        <a href="#" class="nav-item">Home</a>
-        <a href="#" class="nav-item">About</a>
-        <a href="#" class="nav-item">Resume</a>
-        <a href="#" class="nav-item">Projects</a>
-        <a href="#" class="nav-item">Contact</a>
+        <a href="#home" class="nav-item">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#resume" class="nav-item">Resume</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#contact" class="nav-item">Contact</a>
     </nav>
 
-    <!-- Main Content -->
-    <div class="main-content" id="mainContent">
+    <!-- home section -->
+    <section id="home" class="section">
         <div class="typing-container">
-            <h1 class="typing-text" id="typingText"></h1><span class="cursor" id="cursor">|</span>
+            <h1 class="typing-text" id="typingText"></h1><span class="cursor" id="cursor"></span>
         </div>
-    </div>
+    </section>    
+
+    <!-- about section -->
+    <section id="about" class="section">
+        <div class="section-content">
+            <h2 class="section-title">About Me</h2>
+                <div class="content-text">
+                    <p>Hi, I'm Marcus! I'm a current student at University of Washington studying Data Science and Cybersecurity.<p>
+                </div>
+        </div>
+    </section>
+
+     <!-- resume section -->
+    <section id="resume" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Resume</h2>
+            <div class="content-text">
+                <div class="resume-section">
+                    <h3>Experience</h3>
+                    <div class="resume-item">
+                        <h4>Data Analyst Intern</h4>
+                        <span class="resume-date">April 2025 - Present</span>
+                        <p>- Conducted qualitative and quantitative research to analyze Gen Z trends, behaviors, and preferences in the audio device industry, surveying over 4000 participants across diverse demographic <br>
+                           - Utilized Python, data science libraries, and NLP tools such as Gemini AI to perform sentiment analysis on 10,000+ consumer reviews. <br>
+                           - Developed and presented interactive dashboards and visual reports to communicate key insights and support strategic business decisions</p>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Lead Server</h4>
+                        <span class="resume-date">March 2023 - Present</span>
+                        <p>- Managed and trained 10+ staff, enhancing consistent service quality though supervision and guidance <br>
+                           - Implemented new process improvements that increased overall efficiency by 20%</p>
+                    </div>
+                </div>
+                <br>
+                <div class="resume-section">
+                    <h3>Education</h3>
+                    <div class="resume-item">
+                        <h4>University of Washington</h4>
+                        <span class="resume-date">2023 - 2027</span>
+                        <p>B.S. Data Visualization Minor in Cybersecurity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects section -->
+    <section id="projects" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <a href="https://public.tableau.com/app/profile/marcus.li8185/viz/FreeFloBox_17482388464560/FreeFloBoxDashboard#1" target="_blank" class="project-link">
+                    <div class="project-item">
+                        <h3>Free Flow Box</h3>
+                        <p>Collaborated with a team to develop a Tableau dashboard for a nonprofit supporting underserved communities. Helping visualize seasonal demand trends, highlighting disposable products reliance, and forcasting usage to inform inventory planning.  </p>
+                    </div>
+                </a>
+                <a href="https://github.com/marcusxli/NBA-Data-Analysis" target="_blank" class="project-link">
+                    <div class="project-item">
+                        <h3>NBA Data Analysis</h3>
+                        <p>Analyzed NBA player data from the 2018-19 season to the present (2024-2025) to uncover insights into player performance, game trends, and statistical correlations. The analysis includes data cleaning, statistical analysis, and interactive visualizations using Python.</p>
+                    </div>
+                </a>
+                <a href="https://marcusxli.github.io" target="_blank" class="project-link">
+                    <div class="project-item">
+                        <h3>Portfolio Website</h3>
+                        <p>A minimalistic personal website built with HTML, CSS, and JavaScript featuring smooth animations and responsive design.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <section id="contact" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Contact</h2>
+            <div class="content-text">
+                <p>Let's connect and discuss opportunities or collaborations.</p>
+                <br>
+                <div class="contact-info">
+                    <p>Email: limarcus04@gmail.com</p>
+                    <p>LinkedIn: https://linkedin.com/in/marcusxli</p>
+                    <p>GitHub: https://github.com/marcusxli</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>

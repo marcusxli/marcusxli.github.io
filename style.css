@@ -4,11 +4,18 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0;
+}
+
 body {
     font-family: 'Courier New', monospace;
     background-color: #000;
     color: #fff;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Initially hidden, controlled by JavaScript */
+    position: relative;
 }
 
 /* Navigation */
@@ -22,6 +29,9 @@ body {
     opacity: 0;
     transition: opacity 1s ease-in;
     z-index: 100;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .navigation.show {
@@ -42,23 +52,21 @@ body {
     color: #ccc;
 }
 
-/* Main Content */
-.main-content {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* Sections */
+.section {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 100px 50px 50px;
+}
+
+#home {
+    position: relative;
 }
 
 .typing-container {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: 0.1em;
 }
 
 .typing-text {
@@ -71,15 +79,137 @@ body {
 .cursor {
     display: inline;
     color: #fff;
-    font-weight: 300;
-    font-size: inherit;
-    line-height: inherit;
+    font-weight: 100;
+    font-size: 2.5rem;
     animation: blink 1s infinite;
+}
+
+.cursor::after {
+    content: '|';
 }
 
 @keyframes blink {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
+}
+
+/* Section Content */
+.section-content {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+}
+
+.content-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 300;
+    text-align: left;
+}
+
+.content-text p {
+    margin-bottom: 20px;
+}
+
+/* Resume Styles */
+.resume-section {
+    margin-bottom: 40px;
+}
+
+.resume-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.resume-item {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.resume-item h4 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.resume-item p {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.resume-date {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+    transform: translateY(-5px);
+}
+
+.project-item {
+    background-color: #111;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    cursor: pointer;
+}
+
+.project-link:hover .project-item {
+    border-color: #555;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.project-item p {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #ccc;
 }
 
 /* Responsive */
@@ -90,11 +220,29 @@ body {
     
     .navigation {
         gap: 25px;
-        top: 40px;
+        top: 30px;
+        padding: 8px 15px;
     }
     
     .nav-item {
         font-size: 1rem;
+    }
+    
+    .section {
+        padding: 80px 30px 30px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .content-text {
+        font-size: 1.1rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
@@ -104,13 +252,31 @@ body {
     }
     
     .navigation {
-        gap: 20px;
-        top: 30px;
+        gap: 15px;
+        top: 20px;
         flex-wrap: wrap;
         justify-content: center;
+        padding: 10px;
     }
     
     .nav-item {
         font-size: 0.9rem;
+    }
+    
+    .section {
+        padding: 70px 20px 20px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .content-text {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .project-item {
+        padding: 20px;
     }
 }
